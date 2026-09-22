@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Map, Palette, Users, Utensils, Sparkles, Compass } from 'lucide-react';
+import { Map, Palette, Users, Utensils, Sparkles, Compass, Music } from 'lucide-react';
 
 export default function Navbar() {
   const location = useLocation();
@@ -82,6 +82,16 @@ export default function Navbar() {
             >
               <Utensils className="w-3.5 h-3.5" />
               Taste Local
+            </Link>
+
+            <Link
+              to="/local-events"
+              className={`flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold transition ${
+                isActive('/local-events') ? 'bg-stone-900 text-amber-50' : 'text-stone-600 hover:bg-stone-100'
+              }`}
+            >
+              <Music className="w-3.5 h-3.5" />
+              Local Events
             </Link>
           </div>
         </div>
