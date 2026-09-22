@@ -7,6 +7,7 @@ import Participate from './pages/Participate';
 import Taste from './pages/Taste';
 import PointPlanner from './pages/PointPlanner';
 import Destinations from './pages/Destinations';
+import LocalEvents from './pages/LocalEvents';
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
             <Route path="/craft" element={<CraftAndLoom />} />
             <Route path="/participate" element={<Participate />} />
             <Route path="/taste" element={<Taste />} />
+            <Route path="/local-events" element={<LocalEvents />} />
             <Route path="/plan-my-trip" element={<PointPlanner />} />
             <Route path="/plan" element={<Navigate to="/plan-my-trip" replace />} />
           </Routes>
