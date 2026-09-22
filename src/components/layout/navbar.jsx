@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Map, Palette, Users, Utensils, Sparkles } from 'lucide-react';
+import { Map, Palette, Users, Utensils, Sparkles, Compass } from 'lucide-react';
 
 export default function Navbar() {
   const location = useLocation();
 
-  const isActive = (path) => location.pathname === path;
+  const isActive = (path) => location.pathname === path || (path === '/plan-my-trip' && location.pathname === '/plan');
 
   return (
     <nav className="bg-white border-b border-stone-200 sticky top-0 z-50">
@@ -23,15 +23,25 @@ export default function Navbar() {
 
           <div className="flex items-center gap-1 sm:gap-2">
             <Link
-              to="/plan"
+              to="/plan-my-trip"
               className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold transition shadow-sm ${
-                isActive('/plan')
+                isActive('/plan-my-trip')
                   ? 'bg-amber-600 text-white'
                   : 'bg-amber-50 text-amber-900 hover:bg-amber-100 border border-amber-200'
               }`}
             >
               <Sparkles className="w-3.5 h-3.5" />
-              Plan My Experience
+              Plan My Trip
+            </Link>
+
+            <Link
+              to="/destinations"
+              className={`flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold transition ${
+                isActive('/destinations') ? 'bg-stone-900 text-amber-50' : 'text-stone-600 hover:bg-stone-100'
+              }`}
+            >
+              <Compass className="w-3.5 h-3.5" />
+              Destinations
             </Link>
 
             <Link
