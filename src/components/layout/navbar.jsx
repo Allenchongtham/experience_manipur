@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Map, Palette, Users, Utensils, Sparkles, Compass, Music } from 'lucide-react';
+import { Map, Palette, Users, Utensils, Sparkles, Compass, Music, Home } from 'lucide-react';
 
 export default function Navbar() {
   const location = useLocation();
@@ -8,10 +8,12 @@ export default function Navbar() {
   const isActive = (path) => location.pathname === path || (path === '/plan-my-trip' && location.pathname === '/plan');
 
   return (
-    <nav className="bg-white border-b border-stone-200 sticky top-0 z-50">
+    <nav className="bg-white border-b border-stone-200 sticky top-0 z-50 shadow-xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
-          <Link to="/explore" className="flex items-center gap-2">
+          
+          {/* Brand Logo links to Home */}
+          <Link to="/" className="flex items-center gap-2">
             <div className="bg-amber-600 text-white p-2 rounded-xl shadow-sm">
               <Map className="w-5 h-5" />
             </div>
@@ -21,10 +23,35 @@ export default function Navbar() {
             </div>
           </Link>
 
-          <div className="flex items-center gap-1 sm:gap-2">
+          {/* Navigation Links */}
+          <div className="flex items-center gap-1 sm:gap-1.5">
+            
+            <Link
+              to="/"
+              className={`flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold transition ${
+                isActive('/') ? 'bg-stone-900 text-amber-50' : 'text-stone-600 hover:bg-stone-100'
+              }`}
+            >
+              <Home className="w-3.5 h-3.5" />
+              Home
+            </Link>
+
+            {/* AI-Integrated Tabs placed between Home and Destinations */}
+            <Link
+              to="/local-events"
+              className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold transition shadow-xs ${
+                isActive('/local-events')
+                  ? 'bg-amber-700 text-white'
+                  : 'bg-amber-50 text-amber-900 hover:bg-amber-100 border border-amber-200'
+              }`}
+            >
+              <Music className="w-3.5 h-3.5" />
+              Local Events
+            </Link>
+
             <Link
               to="/plan-my-trip"
-              className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold transition shadow-sm ${
+              className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold transition shadow-xs ${
                 isActive('/plan-my-trip')
                   ? 'bg-amber-600 text-white'
                   : 'bg-amber-50 text-amber-900 hover:bg-amber-100 border border-amber-200'
@@ -33,6 +60,8 @@ export default function Navbar() {
               <Sparkles className="w-3.5 h-3.5" />
               Plan My Trip
             </Link>
+
+            <div className="h-5 w-[1px] bg-stone-200 mx-1 hidden sm:block" />
 
             <Link
               to="/destinations"
@@ -84,15 +113,6 @@ export default function Navbar() {
               Taste Local
             </Link>
 
-            <Link
-              to="/local-events"
-              className={`flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-semibold transition ${
-                isActive('/local-events') ? 'bg-stone-900 text-amber-50' : 'text-stone-600 hover:bg-stone-100'
-              }`}
-            >
-              <Music className="w-3.5 h-3.5" />
-              Local Events
-            </Link>
           </div>
         </div>
       </div>

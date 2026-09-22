@@ -1,96 +1,85 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Sparkles, Compass, MapPin, Palette } from 'lucide-react';
+import { Sparkles, Compass, MapPin, Calendar } from 'lucide-react';
+import landingCardImg from '../assets/manipur_landing_card.jpg';
+import bgHeroImg from '../assets/background.jpg';
 
 export default function LandingHome() {
   const navigate = useNavigate();
 
   return (
-    <div className="relative h-screen w-full overflow-hidden bg-stone-950">
+    <div className="relative min-h-[calc(100vh-4rem)] w-full overflow-hidden flex items-center justify-center py-12 px-6 sm:px-12 lg:px-24">
       
-      {/* Background Image with Dark Gradient Overlay */}
+      {/* Background Image & Overlay Layer stretching full width */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://images.unsplash.com/photo-1626015493091-13768b64ce01?auto=format&fit=crop&w=2000&q=80" 
-          alt="Manipur Hills and Loktak Lake" 
-          className="w-full h-full object-cover scale-105 animate-fadeIn"
+          src={bgHeroImg} 
+          alt="Manipur Background" 
+          className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-stone-950/30 to-stone-950/50" />
+        <div className="absolute inset-0 bg-stone-950/65 backdrop-blur-[2px]" />
       </div>
 
-      {/* Top Navigation Bar */}
-      <header className="absolute top-0 left-0 right-0 z-20 flex items-center justify-between px-6 lg:px-12 py-5 text-white">
-        <div className="flex items-center gap-3">
-          <div className="bg-amber-600 text-white p-2 rounded-xl font-bold tracking-wider shadow-md">
-            EM
-          </div>
-          <span className="font-extrabold tracking-tight text-lg drop-shadow-md">Experience Manipur</span>
-        </div>
-
-        <nav className="hidden md:flex items-center gap-8 text-sm font-medium drop-shadow-sm">
-          <button onClick={() => navigate('/destinations')} className="hover:text-amber-400 transition">Destinations</button>
-          <button onClick={() => navigate('/craft')} className="hover:text-amber-400 transition">Craft & Loom</button>
-          <button onClick={() => navigate('/participate')} className="hover:text-amber-400 transition">Participate</button>
-          <button onClick={() => navigate('/taste')} className="hover:text-amber-400 transition">Taste Local</button>
-        </nav>
-
-        <div className="flex items-center gap-4">
-          <button 
-            onClick={() => navigate('/plan-my-trip')}
-            className="flex items-center gap-2 bg-amber-600 hover:bg-amber-700 text-white px-5 py-2.5 rounded-full text-xs font-bold tracking-wide shadow-lg transition transform hover:scale-105"
-          >
-            <Sparkles className="w-3.5 h-3.5" /> Plan with Point
-          </button>
-        </div>
-      </header>
-
-      {/* Hero Center Content & Action Pills */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 max-w-5xl mx-auto pt-20">
+      {/* Main Content Grid spanning full width */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
-        {/* Subtitle Badge */}
-        <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-1.5 rounded-full text-amber-300 text-xs font-semibold tracking-wider uppercase mb-6 shadow-sm">
-          <Compass className="w-3.5 h-3.5" /> Turn Free Time Into Living Culture
+        {/* Left Column: Bold Typography */}
+        <div className="lg:col-span-7 space-y-6">
+          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 text-amber-300 px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wide shadow-sm">
+            <Compass className="w-3.5 h-3.5" /> Discover the real Manipur
+          </div>
+
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-[1.05] text-white drop-shadow-lg">
+            Experience <br />
+            <span className="text-amber-400">Manipur</span> <br />
+            differently.
+          </h1>
+
+          <p className="text-stone-200 text-sm sm:text-base max-w-xl leading-relaxed font-medium drop-shadow">
+            Tell us how much time you have, what you enjoy, and what you want to experience. Use our AI-integrated tabs above to plan a custom trip or discover live community events instantly.
+          </p>
+
+          <div className="flex flex-wrap items-center gap-4 pt-2">
+            <button
+              onClick={() => navigate('/destinations')}
+              className="flex items-center gap-2 bg-amber-600 hover:bg-amber-700 text-white px-6 py-3.5 rounded-2xl text-xs font-bold shadow-xl transition transform hover:-translate-y-0.5"
+            >
+              <MapPin className="w-4 h-4 text-white" /> Explore Destinations
+            </button>
+          </div>
         </div>
 
-        {/* Massive Bold Title */}
-        <h1 className="text-4xl sm:text-6xl md:text-7xl font-black text-white tracking-tight uppercase drop-shadow-2xl mb-8 leading-none">
-          Discover Manipur <br />
-          <span className="text-amber-400">The Living Eden</span>
-        </h1>
+        {/* Right Column: Immersive Card */}
+        <div className="lg:col-span-5 flex justify-center">
+          <div className="relative w-full max-w-md bg-stone-900 rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white/20">
+            <div className="absolute inset-0 z-0">
+              <img
+                src={landingCardImg}
+                alt="Manipur Culture & Landscape"
+                className="w-full h-full object-cover opacity-85"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-950/30 to-transparent" />
+            </div>
 
-        {/* Quick Action Pill Buttons */}
-        <div className="flex flex-wrap items-center justify-center gap-3 mt-4">
-          <button 
-            onClick={() => navigate('/destinations')}
-            className="flex items-center gap-2 bg-white/90 hover:bg-white text-stone-900 px-5 py-3 rounded-full text-xs font-bold shadow-xl backdrop-blur-sm transition transform hover:-translate-y-0.5"
-          >
-            <MapPin className="w-3.5 h-3.5 text-amber-700" /> See iconic landmarks
-          </button>
+            <div className="absolute top-5 right-5 z-10 bg-white/90 backdrop-blur-md px-3.5 py-1.5 rounded-full shadow-md flex items-center gap-1.5 text-[11px] font-bold text-stone-900">
+              <MapPin className="w-3 h-3 text-amber-700" /> Imphal & beyond
+            </div>
 
-          <button 
-            onClick={() => navigate('/explore')}
-            className="flex items-center gap-2 bg-white/90 hover:bg-white text-stone-900 px-5 py-3 rounded-full text-xs font-bold shadow-xl backdrop-blur-sm transition transform hover:-translate-y-0.5"
-          >
-            <Compass className="w-3.5 h-3.5 text-amber-700" /> Explore interactive map
-          </button>
-
-          <button 
-            onClick={() => navigate('/craft')}
-            className="flex items-center gap-2 bg-white/90 hover:bg-white text-stone-900 px-5 py-3 rounded-full text-xs font-bold shadow-xl backdrop-blur-sm transition transform hover:-translate-y-0.5"
-          >
-            <Palette className="w-3.5 h-3.5 text-amber-700" /> Handloom & craft sessions
-          </button>
-
-          <button 
-            onClick={() => navigate('/plan-my-trip')}
-            className="flex items-center gap-2 bg-amber-600 hover:bg-amber-700 text-white px-5 py-3 rounded-full text-xs font-bold shadow-xl transition transform hover:-translate-y-0.5"
-          >
-            <Sparkles className="w-3.5 h-3.5" /> Plan trip with AI Concierge
-          </button>
+            <div className="relative z-10 p-8 pt-64 flex flex-col justify-end space-y-3">
+              <span className="text-[10px] font-extrabold uppercase tracking-widest text-amber-400">
+                MANIPUR
+              </span>
+              <h3 className="text-2xl sm:text-3xl font-black text-white leading-tight">
+                Culture, People & Stories
+              </h3>
+              <p className="text-xs text-stone-300 leading-relaxed font-medium">
+                Discover authentic traditions, local music gigs, and handloom craftsmanship beyond the usual tourist path.
+              </p>
+            </div>
+          </div>
         </div>
 
       </div>
-
     </div>
   );
 }
