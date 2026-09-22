@@ -12,6 +12,8 @@ At the same time:
 
 ---
 
+
+
 ##  Proposed Solution
 
 **Experience Manipur** is an AI-powered, experience-first tourism platform that turns fragmented free time into living culture. Instead of treating Manipur as a checklist of static locations, the app bridges the gap between travelers seeking authenticity and local hosts preserving their heritage.
@@ -20,6 +22,8 @@ At the same time:
 * **Smart Fragmented-Time Planning:** An AI Trip Planner (`Plan My Trip`) allows visitors to input their exact available time window, interests, and location status (whether in Manipur or planning ahead) to instantly generate tailored micro-itineraries.
 * **Agentic RAG Local Events Concierge:** Solves the problem of scattered, informal information by retrieving live community gigs, music sessions, and seasonal pop-ups through a real-time conversational AI interface (`LocalEvents`).
 * **Direct Digital Enablement for Local Hosts:** Serves as a structured, trustworthy bridge for local artisans, musicians, and culinary hosts to showcase their work, driving tourism revenue straight to community roots.
+
+
 
 ## Completed Features
 
@@ -33,6 +37,8 @@ At the same time:
 | 6 | `Destinations.jsx` categorized landmark directory (Heritage, Nature, Culture) & detail modals | ✅ Done |
 | 7 | `ExploreMap.jsx` interactive geospatial map interface routing | ✅ Done |
 | 8 | `CraftAndLoom.jsx`, `Participate.jsx`, & `Taste.jsx` living culture & local host modules | ✅ Done |
+
+
 
 
 ## User Flow
@@ -54,6 +60,7 @@ At the same time:
               └─► Taste Local (Culinary Experiences)
 
 ```
+
 
 
 ## Plan My Trip AI Architecture
@@ -101,6 +108,7 @@ At the same time:
 ```
 
 
+
 ## Tech Stack
 
 | Category | Technology |
@@ -109,6 +117,8 @@ At the same time:
 | **Maps & Geospatial** | React Leaflet, OpenStreetMap tiles |
 | **AI / Logic** | Hugging Face Qwen 2.5 Instruct Model, Custom deterministic planner engine, Template-based agentic RAG for Local Events |
 | **Tooling** | Vite (build + dev server), Git + GitHub (version control) |
+
+
 
 
 ## Project Structure
@@ -137,6 +147,8 @@ experience_manipur/
 └── README.md               
 
 ```
+
+
 
 
 ## Impact
