@@ -1,4 +1,4 @@
-## 🛑 The Problem
+##  The Problem
 
 Tourists visiting Manipur typically experience the region through a destination-first lens: they visit well-known landmarks (Loktak Lake, Kangla Fort, Ima Keithel) but miss the living culture that defines the place—handloom workshops, folk music sessions, community gatherings, and local food traditions.
 
@@ -12,7 +12,7 @@ At the same time:
 
 ---
 
-## 💡 Proposed Solution
+##  Proposed Solution
 
 **Experience Manipur** is an AI-powered, experience-first tourism platform that turns fragmented free time into living culture. Instead of treating Manipur as a checklist of static locations, the app bridges the gap between travelers seeking authenticity and local hosts preserving their heritage.
 
