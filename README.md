@@ -105,19 +105,10 @@ At the same time:
 
 | Category | Technology |
 | --- | --- |
-| **Frontend** | React 18, React Router (SPA navigation, nested layouts), Tailwind CSS (responsive, utility-first styling), Lucide React (icons)
-
- |
-| **Maps & Geospatial** | React Leaflet, OpenStreetMap tiles
-
- |
-| **AI / Logic** | Hugging Face Qwen 2.5 Instruct Model, Custom deterministic planner engine, Template-based agentic RAG for Local Events
-
- |
-| **Tooling** | Vite (build + dev server), Git + GitHub (version control)
-
- |
-
+| **Frontend** | React 18, React Router (SPA navigation, nested layouts), Tailwind CSS (responsive, utility-first styling), Lucide React (icons) |
+| **Maps & Geospatial** | React Leaflet, OpenStreetMap tiles |
+| **AI / Logic** | Hugging Face Qwen 2.5 Instruct Model, Custom deterministic planner engine, Template-based agentic RAG for Local Events |
+| **Tooling** | Vite (build + dev server), Git + GitHub (version control) |
 
 
 ## Project Structure
