@@ -1,8 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Sparkles, Compass, MapPin, Calendar } from 'lucide-react';
-import landingCardImg from '../assets/manipur_landing_card.jpg';
-import bgHeroImg from '../assets/background.jpg';
+import landingCardImg from '../assets/manipur_landing_card.jpeg';
+import bgHeroImg from '../assets/loktak.jpeg';
 
 export default function LandingHome() {
   const navigate = useNavigate();

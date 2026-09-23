@@ -7,6 +7,53 @@ import { useLocation } from 'react-router-dom';
 import L from 'leaflet';
 import { Palette, Users, Utensils, Layers, Compass, MessageSquare, X } from 'lucide-react';
 
+// Import all local images from src/assets/
+import androImg from '../assets/andro.jpeg';
+import bambooImg from '../assets/bamboo.jpeg';
+import chahaoImg from '../assets/chahao.jpeg';
+import craftImg from '../assets/craft.jpeg';
+import danceImg from '../assets/dance.jpeg';
+import handloomImg from '../assets/handloom.jpeg';
+import kangeiImg from '../assets/kangei.jpeg';
+import kanglaImg from '../assets/kangla.jpeg';
+import keibulImg from '../assets/keibul.jpeg';
+import loktakImg from '../assets/loktak.jpeg';
+import marketImg from '../assets/market.jpeg';
+import orchImg from '../assets/orch.jpeg';
+import pungImg from '../assets/pung.jpeg';
+import sagolImg from '../assets/sagol.jpeg';
+import shiruiImg from '../assets/shirui.jpeg';
+import thaliImg from '../assets/thali.jpeg';
+import thangImg from '../assets/thang.jpeg';
+import yubiImg from '../assets/yubi.jpeg';
+
+// Asset map helper to match titles/keywords to local asset files
+function getAssetImage(item) {
+  const title = (item.title || item.name || '').toLowerCase();
+  const cat = (item.category || '').toLowerCase();
+
+  if (title.includes('bamboo')) return bambooImg;
+  if (title.includes('kouna') || title.includes('craft')) return craftImg;
+  if (title.includes('motif') || title.includes('handloom') || title.includes('weaving')) return handloomImg;
+  if (title.includes('dance') || title.includes('ras') || title.includes('jagoi')) return danceImg;
+  if (title.includes('pung') || title.includes('drum') || title.includes('cholom')) return pungImg;
+  if (title.includes('thang') || title.includes('ta') || title.includes('martial')) return thangImg;
+  if (title.includes('sagol') || title.includes('kangjei') || title.includes('polo')) return sagolImg || kangeiImg;
+  if (title.includes('yubi') || title.includes('lakpi')) return yubiImg;
+  if (title.includes('chahao') || title.includes('kheer') || title.includes('rice')) return chahaoImg;
+  if (title.includes('thali') || title.includes('meal') || title.includes('cuisine') || cat.includes('cuisine')) return thaliImg;
+  if (title.includes('loktak')) return loktakImg;
+  if (title.includes('kangla')) return kanglaImg;
+  if (title.includes('keibul') || title.includes('sangai')) return keibulImg;
+  if (title.includes('market') || title.includes('keithel')) return marketImg;
+  if (title.includes('orchid') || title.includes('orch')) return orchImg;
+  if (title.includes('shirui')) return shiruiImg;
+  if (title.includes('andro')) return androImg;
+
+  // Fallback to original image_url if provided, otherwise default to craftImg
+  return item.image_url || craftImg;
+}
+
 function MapViewController({ target }) {
   const map = useMap();
   
@@ -63,8 +110,18 @@ export default function ExploreMap() {
         ]);
 
         if (isMounted) {
-          setExperiences(rawExp.map(normalizeExperienceForMap));
-          setDestinations(rawDest.map(normalizeDestinationForMap));
+          const normExp = rawExp.map(normalizeExperienceForMap).map(item => ({
+            ...item,
+            image_url: getAssetImage(item)
+          }));
+
+          const normDest = rawDest.map(normalizeDestinationForMap).map(item => ({
+            ...item,
+            image_url: getAssetImage(item)
+          }));
+
+          setExperiences(normExp);
+          setDestinations(normDest);
           setLoading(false);
         }
       } catch (err) {

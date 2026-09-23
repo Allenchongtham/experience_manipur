@@ -1,17 +1,14 @@
-import React, { useEffect, useState } from 'react';
-import { fetchExperiences } from '../lib/api';
+import React from 'react';
+import { MOCK_EXPERIENCES } from '../lib/mockData';
 import ExperienceCard from '../components/shared/ExperienceCard';
 import Prototype from '../components/shared/Prototype';
 import { Utensils } from 'lucide-react';
 
 export default function Taste() {
-  const [experiences, setExperiences] = useState([]);
-
-  useEffect(() => {
-    fetchExperiences().then(data => {
-      setExperiences(data.filter(exp => exp.category === 'cuisine'));
-    });
-  }, []);
+  // Filter for both 'cuisine' and 'taste' categories directly from mockData
+  const tasteExperiences = MOCK_EXPERIENCES.filter(
+    exp => exp.category === 'cuisine' || exp.category === 'taste'
+  );
 
   return (
     <div className="py-6">
@@ -26,7 +23,7 @@ export default function Taste() {
       <Prototype />
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {experiences.map((experience) => (
+        {tasteExperiences.map((experience) => (
           <ExperienceCard key={experience.id} experience={experience} />
         ))}
       </div>

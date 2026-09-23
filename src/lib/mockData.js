@@ -1,3 +1,15 @@
+import craftImg from '../assets/craft.jpeg'; 
+import handloomImg from '../assets/handloom.jpeg'; 
+import bambooImg from '../assets/bamboo.jpeg';
+import danceImg from '../assets/dance.jpeg';
+import pungImg from '../assets/pung.jpeg';
+import thangImg from '../assets/thang.jpeg';
+import yubiImg from '../assets/yubi.jpeg';
+import chahaoImg from '../assets/chahao.jpeg';
+import sagolImg from '../assets/sagol.jpeg';
+import thaliImg from '../assets/thali.jpeg';
+
+
 export const MOCK_EXPERIENCES = [
   {
     id: "exp-1",
@@ -20,7 +32,7 @@ export const MOCK_EXPERIENCES = [
       { author: "Suraj M.", comment: "An incredible introduction to traditional water reed weaving! Very patient instruction.", rating: 5 },
       { author: "Priya K.", comment: "Loved making the coaster souvenir. Highly authentic setting.", rating: 4.5 }
     ],
-    image_url: "https://images.unsplash.com/photo-1590736969955-71cc94801759?auto=format&fit=crop&w=600&q=80",
+    image_url: craftImg,
     host: { name: "Ibemhal Craft Collective", contact_label: "Demo Artisan Contact" },
     slots: [
       { id: "s1-1", date: "Today", start_time: "14:00", end_time: "15:30", available_seats: 4 }
@@ -47,7 +59,7 @@ export const MOCK_EXPERIENCES = [
       { author: "Dr. Ibomcha S.", comment: "Deeply educational. The historical context behind royal motifs is fascinating.", rating: 5 },
       { author: "Neha T.", comment: "Very peaceful and immersive storytelling.", rating: 4.8 }
     ],
-    image_url: "https://images.unsplash.com/photo-1606744888344-493238951221?auto=format&fit=crop&w=600&q=80",
+    image_url: handloomImg,
     host: { name: "Weavers Heritage Guild", contact_label: "Demo Guild Contact" },
     slots: [
       { id: "s2-1", date: "Today", start_time: "16:00", end_time: "17:00", available_seats: 6 }
@@ -74,7 +86,7 @@ export const MOCK_EXPERIENCES = [
       { author: "Vikram N.", comment: "Master craftsman was extremely knowledgeable. Great hands-on feel.", rating: 5 },
       { author: "Bala M.", comment: "A bit challenging at first, but highly rewarding.", rating: 4.3 }
     ],
-    image_url: "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=600&q=80",
+    image_url: bambooImg,
     host: { name: "Khurai Craft Circle", contact_label: "Demo Artisan Contact" },
     slots: [
       { id: "s3-1", date: "Today", start_time: "15:30", end_time: "16:45", available_seats: 3 }
@@ -101,7 +113,7 @@ export const MOCK_EXPERIENCES = [
       { author: "Anjana L.", comment: "Graceful, beautiful, and the instructor explained every mudra wonderfully.", rating: 5 },
       { author: "Michael R.", comment: "An absolute highlight of my trip to Imphal!", rating: 5 }
     ],
-    image_url: "https://images.unsplash.com/photo-1547153760-18fc86324498?auto=format&fit=crop&w=600&q=80",
+    image_url: danceImg,
     host: { name: "Nitya Cultural Academy", contact_label: "Demo Instructor Contact" },
     slots: [
       { id: "s4-1", date: "Today", start_time: "15:30", end_time: "16:30", available_seats: 8 }
@@ -128,7 +140,7 @@ export const MOCK_EXPERIENCES = [
       { author: "Kishore Th.", comment: "The energy in the room when everyone drums together is electric!", rating: 5 },
       { author: "Sonia D.", comment: "Energetic and unforgettable rhythm session.", rating: 4.7 }
     ],
-    image_url: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=600&q=80",
+    image_url: pungImg,
     host: { name: "Manipuri Drum Arts Society", contact_label: "Demo Host Contact" },
     slots: [
       { id: "s5-1", date: "Today", start_time: "17:00", end_time: "17:45", available_seats: 5 }
@@ -155,7 +167,7 @@ export const MOCK_EXPERIENCES = [
       { author: "Tomba S.", comment: "World-class martial heritage presentation. Must experience for anyone visiting Manipur.", rating: 5 },
       { author: "David H.", comment: "Safe, disciplined, and incredibly cool footwork drills.", rating: 5 }
     ],
-    image_url: "https://images.unsplash.com/photo-1555597673-b21d5c935865?auto=format&fit=crop&w=600&q=80",
+    image_url: thangImg,
     host: { name: "Huyen Langlon Martial Academy", contact_label: "Demo Instructor Contact" },
     slots: [
       { id: "s6-1", date: "Today", start_time: "14:00", end_time: "15:00", available_seats: 5 }
@@ -182,7 +194,7 @@ export const MOCK_EXPERIENCES = [
       { author: "Rojen M.", comment: "Standing at the oldest polo ground in the world gave me goosebumps.", rating: 5 },
       { author: "Samantha W.", comment: "Great history talk about Manipuri ponies.", rating: 4.6 }
     ],
-    image_url: "https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=600&q=80",
+    image_url: sagolImg,
     host: { name: "Manipur Horse Riding & Polo Association", contact_label: "Demo Heritage Guide" },
     slots: [
       { id: "s7-1", date: "Today", start_time: "16:30", end_time: "17:30", available_seats: 10 }
@@ -209,7 +221,7 @@ export const MOCK_EXPERIENCES = [
       { author: "Sanatomba K.", comment: "Very unique indigenous sport explanation. Loved the Q&A.", rating: 4.8 },
       { author: "Loya N.", comment: "Fascinating rules and physical grit required.", rating: 4.5 }
     ],
-    image_url: "https://images.unsplash.com/photo-1517649763962-0c6232662000?auto=format&fit=crop&w=600&q=80",
+    image_url: yubiImg,
     host: { name: "Indigenous Games Council", contact_label: "Demo Council Contact" },
     slots: [
       { id: "s8-1", date: "Today", start_time: "14:30", end_time: "15:15", available_seats: 12 }
@@ -235,7 +247,7 @@ export const MOCK_EXPERIENCES = [
       { author: "Menaka P.", comment: "The Eromba and local herbs were out of this world. Pure comfort food.", rating: 5 },
       { author: "Abujam S.", comment: "Authentic home-style Meitei flavors. Highly recommended!", rating: 4.9 }
     ],
-    image_url: "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=600&q=80",
+    image_url: thaliImg,
     host: { name: "Ima Culinary Collective", contact_label: "Demo Kitchen Contact" }
   },
   {
@@ -258,7 +270,7 @@ export const MOCK_EXPERIENCES = [
       { author: "Charity L.", comment: "Chak-hao Kheer is deliciously rich and nutty. Perfect dessert pitstop.", rating: 5 },
       { author: "Khurairatpam J.", comment: "Quick service and incredible aroma.", rating: 4.5 }
     ],
-    image_url: "https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=600&q=80",
+    image_url: chahaoImg,
     host: { name: "Leima Sweets", contact_label: "Demo Cafe Contact" }
   }
 ];
