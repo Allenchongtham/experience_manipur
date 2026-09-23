@@ -9,7 +9,6 @@ import chahaoImg from '../assets/chahao.jpeg';
 import sagolImg from '../assets/sagol.jpeg';
 import thaliImg from '../assets/thali.jpeg';
 
-
 export const MOCK_EXPERIENCES = [
   {
     id: "exp-1",
