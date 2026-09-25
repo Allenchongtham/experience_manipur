@@ -149,10 +149,10 @@ export default function ExploreMap() {
   });
 
   return (
-    <div className="fixed left-0 right-0 top-[73px] bottom-[48px] z-0">
+    <div className="fixed left-0 right-0 top-\[73px\] bottom-\[48px\] z-0">
       
       {/* Floating Category Filter Bar */}
-      <div className="absolute top-4 left-1/2 -translate-x-1/2 z-[400] bg-white/95 backdrop-blur-sm p-1.5 rounded-2xl shadow-lg border border-stone-200 flex items-center gap-1">
+      <div className="absolute top-4 left-1/2 -translate-x-1/2 z-\[400\] bg-white/95 backdrop-blur-sm p-1.5 rounded-2xl shadow-lg border border-stone-200 flex items-center gap-1">
         <button
           onClick={() => setSelectedCategory('all')}
           className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold transition ${
@@ -276,7 +276,7 @@ export default function ExploreMap() {
 
       {/* Custom Details & WhatsApp Handoff Modal */}
       {activeDetailModal && (
-        <div className="fixed inset-0 z-[9999] bg-stone-950/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-\[9999\] bg-stone-950/60 backdrop-blur-sm flex items-center justify-center p-4">
           <div className="bg-white rounded-3xl max-w-md w-full p-6 space-y-5 shadow-2xl animate-fadeIn border border-stone-200 text-stone-900">
             <div className="flex items-center justify-between border-b border-stone-100 pb-3">
               <div>

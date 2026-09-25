@@ -28,7 +28,7 @@ export default function MomentMatchAIExplanation({ context, topMatch, alternativ
   if (!topMatch) return null;
 
   return (
-    <div className="bg-gradient-to-br from-amber-50/80 via-white to-stone-50 border border-amber-200/60 rounded-2xl p-5 shadow-sm mb-6 relative">
+    <div className="rbg-gradient-to-b from-amber-50/80 via-white to-stone-50 border border-amber-200/60 rounded-2xl p-5 shadow-sm mb-6 relative">
       <div className="flex items-center justify-between mb-2">
         <div className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-amber-800 bg-amber-100/80 px-2.5 py-1 rounded-full">
           <Sparkles className="w-3.5 h-3.5 text-amber-600" />
